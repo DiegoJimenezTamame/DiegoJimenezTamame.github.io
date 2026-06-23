@@ -1,77 +1,72 @@
-# Base44 Project
+# diegojimeneztamame.com
 
-Use this repository to run and edit the app locally, then publish changes back through Base44.
+Personal website of **Diego Jiménez Tamame** — composer, music engraver, and arranger based in Graz, Austria.
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+## Overview
 
-## Prerequisites
+A minimalist, high-performance portfolio site replacing the previous WordPress.com installation. Built with a Ryoji Ikeda-inspired aesthetic: pure black background, stark white monospace typography, and clinical data-driven layout.
 
-1. Clone the repository using the project's Git URL.
-2. Navigate to the project directory.
-3. Install dependencies: `npm install`.
-4. Install the Base44 CLI: `npm install -g base44@latest`.
+The site presents two professional identities:
+- **Composer** — selected works, instrumentation, premiere info, and media
+- **Engraver & Arranger** — services, selected clients, and a direct contact form
 
-See the [Base44 CLI docs](https://docs.base44.com/developers/references/cli/get-started/overview) if you want to run Base44 commands directly.
+Trilingual interface: **English / Spanish / German**.
 
-## Run Locally
+## Tech Stack
 
-Run the full local development environment from the project root:
+- [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/) component primitives
+- [Framer Motion](https://www.framer.motion.com/) for scroll animations
+- [Formspree](https://formspree.io/) for static-compatible contact form
+- Deployed via **GitHub Actions** → **GitHub Pages**
 
-```bash
-base44 dev
-```
+## Fonts
 
-`base44 dev` starts the local Base44 development backend and, when this app is configured for it, also starts the frontend dev server for you. Use the frontend URL printed by the command.
+- **IBM Plex Mono** — body and interface text
+- **Inter** — headings and display text
 
-For example, when the Base44 project config includes a `serveCommand`, `base44 dev` can launch the frontend too:
+## Deployment
 
-```json5
-{
-  "site": {
-    "serveCommand": "npm run dev"
-  }
-}
-```
+Every push to `main` triggers the GitHub Actions workflow (`.github/workflows/deploy.yml`), which builds the Vite app and deploys the `dist/` folder to GitHub Pages.
 
-In a Base44 project this lives in `base44/config.jsonc`.
+The site is served at:
+- **Primary**: [www.diegojimeneztamame.com](https://www.diegojimeneztamame.com)
+- **Fallback**: [diegojimenezTamame.github.io](https://diegojimenezTamame.github.io)
 
-## Run Only The Frontend
-
-If you only want to work on the frontend against the hosted Base44 backend, run:
+## Local Development
 
 ```bash
+npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite.
+Then open [http://localhost:5173](http://localhost:5173).
 
-## Use The Hosted Backend
+## Project Structure
 
-For frontend-only development, create or update `.env.local` in the project root:
-
-```bash
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=https://your-app.base44.app
+```
+src/
+├── pages/
+│   └── Home.jsx              # Main single-page layout
+├── components/
+│   └── site/
+│       ├── Navigation.jsx    # Fixed top nav with language switcher
+│       ├── HeroSection.jsx   # Full-screen landing
+│       ├── EngravingSection.jsx
+│       ├── ComposerSection.jsx
+│       ├── AboutSection.jsx
+│       ├── ContactSection.jsx
+│       └── FooterSection.jsx
+├── lib/
+│   └── i18n.jsx              # EN / ES / DE translation strings
+└── index.css                 # Design tokens + Tailwind base
 ```
 
-`VITE_BASE44_APP_ID` identifies the Base44 app.
+## Contact Form
 
-`VITE_BASE44_APP_BASE_URL` tells the Base44 Vite plugin where to send local `/api` requests. Point it at your deployed Base44 app URL when you want the local frontend to use the hosted backend.
+The contact form uses [Formspree](https://formspree.io/). To update the recipient email, create a form at formspree.io and replace the endpoint ID in `components/site/ContactSection.jsx`.
 
-When you use `base44 dev`, the command injects the local Base44 values for you, so `.env.local` is mainly needed for frontend-only workflows.
+## License
 
-## Publish Your Changes
-
-After pushing your changes to git, open the Base44 dashboard and publish the app:
-
-```bash
-base44 dashboard open
-```
-
-## Docs & Support
-
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
-
-Base44 CLI command reference: [https://docs.base44.com/developers/references/cli/commands/introduction](https://docs.base44.com/developers/references/cli/commands/introduction)
-
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+All content © Diego Jiménez Tamame. All rights reserved.
