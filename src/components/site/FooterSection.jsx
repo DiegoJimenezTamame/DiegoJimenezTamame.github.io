@@ -10,68 +10,50 @@ export default function FooterSection() {
   };
 
   return (
-    <footer className="relative bg-black border-t border-white/[0.06]">
+    <footer className="relative bg-background border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 sm:py-20">
-        {/* Top: Name + Nav */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          {/* Identity */}
           <div className="lg:col-span-2">
-            <p className="font-display font-bold text-white text-xl tracking-tight mb-3">
+            <p className="font-display font-bold text-foreground text-xl tracking-tight mb-3">
               DIEGO JIMÉNEZ TAMAME
             </p>
-            <p className="font-mono text-[11px] text-white/25 leading-relaxed max-w-sm">
+            <p className="font-mono text-[11px] text-foreground/30 leading-relaxed max-w-sm">
               {t.hero.tagline}
             </p>
           </div>
 
-          {/* Quick links */}
           <div>
-            <p className="font-mono text-[10px] tracking-[0.2em] text-white/20 uppercase mb-4">
-              SITEMAP_
-            </p>
+            <p className="font-mono text-[10px] tracking-[0.2em] text-foreground/20 uppercase mb-4">SITEMAP_</p>
             <div className="space-y-2">
-              {['engraving', 'composer', 'about', 'contact'].map((id) => (
-                <button
-                  key={id}
-                  onClick={() => scrollTo(id)}
-                  className="block font-mono text-[11px] text-white/30 hover:text-white/70 transition-colors capitalize"
-                >
+              {['composer', 'engraving', 'about', 'contact'].map((id) => (
+                <button key={id} onClick={() => scrollTo(id)}
+                  className="block font-mono text-[11px] text-foreground/40 hover:text-foreground/70 transition-colors capitalize">
                   {t.nav[id === 'engraving' ? 'engraver' : id]}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Social / Links */}
           <div>
-            <p className="font-mono text-[10px] tracking-[0.2em] text-white/20 uppercase mb-4">
-              LINKS_
-            </p>
+            <p className="font-mono text-[10px] tracking-[0.2em] text-foreground/20 uppercase mb-4">LINKS_</p>
             <div className="space-y-2">
-              <a href="https://www.youtube.com/channel/UC7gvIlph1ClFRMz-wQ0sqSw" target="_blank" rel="noopener noreferrer" className="block font-mono text-[11px] text-white/30 hover:text-white/70 transition-colors">
-                YouTube
-              </a>
-              <a href="mailto:diego.jimenez.tamame@gmail.com" className="block font-mono text-[11px] text-white/30 hover:text-white/70 transition-colors">
-                Email
-              </a>
+              <a href="https://www.youtube.com/channel/UC7gvIlph1ClFRMz-wQ0sqSw" target="_blank" rel="noopener noreferrer"
+                className="block font-mono text-[11px] text-foreground/40 hover:text-foreground/70 transition-colors">YouTube</a>
+              <a href="mailto:diego.jimenez.tamame@gmail.com"
+                className="block font-mono text-[11px] text-foreground/40 hover:text-foreground/70 transition-colors">Email</a>
             </div>
           </div>
         </div>
 
-        {/* Bottom system bar */}
-        <div className="border-t border-white/[0.04] pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <span className="inline-flex items-center gap-2 font-mono text-[9px] tracking-[0.2em] text-white/15">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500/40" />
+            <span className="inline-flex items-center gap-2 font-mono text-[9px] tracking-[0.2em] text-foreground/25">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500/60" />
               {t.footer.status}
             </span>
-            <span className="font-mono text-[9px] text-white/10">
-              {t.footer.location}
-            </span>
+            <span className="font-mono text-[9px] text-foreground/20">{t.footer.location}</span>
           </div>
-          <p className="font-mono text-[9px] text-white/10">
-            © {year} Diego Jiménez Tamame
-          </p>
+          <p className="font-mono text-[9px] text-foreground/20">© {year} Diego Jiménez Tamame</p>
         </div>
       </div>
     </footer>
