@@ -20,7 +20,7 @@ export default function HeroSection({ scoreImage, waveImage }) {
         <div className="absolute top-2/3 left-0 w-full h-px bg-black/[0.03]" />
       </div>
 
-      {/* Split images - very subtle background */}
+      {/* Split images */}
       <div className="absolute inset-0 flex pointer-events-none">
         <div className="w-1/2 h-full relative overflow-hidden">
           <img src={scoreImage} alt="Music score detail" className="absolute inset-0 w-full h-full object-cover opacity-[0.05] grayscale" />
@@ -37,43 +37,63 @@ export default function HeroSection({ scoreImage, waveImage }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut' }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start"
         >
-          {/* Index tag */}
-          <p className="font-mono text-[10px] tracking-[0.3em] text-foreground/25 mb-8">
-            000 // INTERFACE
-          </p>
+          {/* Left: Name + roles + tagline */}
+          <div>
+            <p className="font-mono text-[10px] tracking-[0.3em] text-foreground/25 mb-6">
+              000 // INTERFACE
+            </p>
 
-          {/* Name */}
-          <h1 className="font-display font-bold text-foreground leading-[0.9] tracking-tight mb-8" style={{ fontSize: 'clamp(2.5rem, 8vw, 8rem)' }}>
-            DIEGO<br />JIMÉNEZ<br />TAMAME
-          </h1>
+            <h1 className="font-display font-bold text-foreground leading-[0.9] tracking-tight mb-8" style={{ fontSize: 'clamp(1.8rem, 5vw, 5rem)' }}>
+              DIEGO<br />JIMÉNEZ<br />TAMAME
+            </h1>
 
-          {/* Split roles */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-12 mb-12">
-            <button
-              onClick={() => scrollTo('composer')}
-              className="group flex items-center gap-3 text-left"
-            >
-              <span className="w-2 h-2 bg-foreground/40 group-hover:bg-foreground transition-colors" />
-              <span className="font-mono text-sm tracking-[0.2em] text-foreground/50 group-hover:text-foreground transition-colors">
-                {t.hero.subtitle_composer}
-              </span>
-            </button>
-            <button
-              onClick={() => scrollTo('engraving')}
-              className="group flex items-center gap-3 text-left"
-            >
-              <span className="w-2 h-2 bg-foreground/40 group-hover:bg-foreground transition-colors" />
-              <span className="font-mono text-sm tracking-[0.2em] text-foreground/50 group-hover:text-foreground transition-colors">
-                {t.hero.subtitle_engraver}
-              </span>
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 mb-10">
+              <button
+                onClick={() => scrollTo('composer')}
+                className="group flex items-center gap-3 text-left"
+              >
+                <span className="w-2 h-2 bg-foreground/40 group-hover:bg-foreground transition-colors" />
+                <span className="font-mono text-xs tracking-[0.2em] text-foreground/50 group-hover:text-foreground transition-colors">
+                  {t.hero.subtitle_composer}
+                </span>
+              </button>
+              <button
+                onClick={() => scrollTo('engraving')}
+                className="group flex items-center gap-3 text-left"
+              >
+                <span className="w-2 h-2 bg-foreground/40 group-hover:bg-foreground transition-colors" />
+                <span className="font-mono text-xs tracking-[0.2em] text-foreground/50 group-hover:text-foreground transition-colors">
+                  {t.hero.subtitle_engraver}
+                </span>
+              </button>
+            </div>
+
+            <p className="font-mono text-[13px] leading-relaxed text-foreground/35 max-w-md">
+              {t.hero.tagline}
+            </p>
           </div>
 
-          {/* Tagline */}
-          <p className="font-mono text-[13px] leading-relaxed text-foreground/35 max-w-xl">
-            {t.hero.tagline}
-          </p>
+          {/* Right: About bio */}
+          <div className="border-l border-border pl-8 lg:pl-12">
+            <p className="font-mono text-[10px] tracking-[0.3em] text-foreground/25 mb-6 uppercase">
+              {t.about.section}
+            </p>
+            <div className="space-y-4">
+              {t.about.bio.split('\n\n').slice(0, 3).map((paragraph, i) => (
+                <p key={i} className="font-mono text-[12px] leading-[1.8] text-foreground/45">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            <button
+              onClick={() => scrollTo('about')}
+              className="mt-6 font-mono text-[11px] tracking-[0.15em] text-foreground/40 hover:text-foreground transition-colors"
+            >
+              READ MORE →
+            </button>
+          </div>
         </motion.div>
       </div>
 
