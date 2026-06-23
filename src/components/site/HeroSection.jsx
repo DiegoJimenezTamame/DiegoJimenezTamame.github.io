@@ -10,25 +10,25 @@ export default function HeroSection({ scoreImage, waveImage }) {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black">
+    <section id="hero" className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-background border-b border-border">
       {/* Background grid lines */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-white/[0.03]" />
-        <div className="absolute top-0 left-1/2 w-px h-full bg-white/[0.05]" />
-        <div className="absolute top-0 left-3/4 w-px h-full bg-white/[0.03]" />
-        <div className="absolute top-1/3 left-0 w-full h-px bg-white/[0.03]" />
-        <div className="absolute top-2/3 left-0 w-full h-px bg-white/[0.03]" />
+        <div className="absolute top-0 left-1/4 w-px h-full bg-black/[0.03]" />
+        <div className="absolute top-0 left-1/2 w-px h-full bg-black/[0.05]" />
+        <div className="absolute top-0 left-3/4 w-px h-full bg-black/[0.03]" />
+        <div className="absolute top-1/3 left-0 w-full h-px bg-black/[0.03]" />
+        <div className="absolute top-2/3 left-0 w-full h-px bg-black/[0.03]" />
       </div>
 
       {/* Split images - very subtle background */}
       <div className="absolute inset-0 flex pointer-events-none">
         <div className="w-1/2 h-full relative overflow-hidden">
-          <img src={scoreImage} alt="Music score detail" className="absolute inset-0 w-full h-full object-cover opacity-[0.07]" />
+          <img src={scoreImage} alt="Music score detail" className="absolute inset-0 w-full h-full object-cover opacity-[0.05] grayscale" />
         </div>
         <div className="w-1/2 h-full relative overflow-hidden">
-          <img src={waveImage} alt="Sound wave visualization" className="absolute inset-0 w-full h-full object-cover opacity-[0.07]" />
+          <img src={waveImage} alt="Sound wave visualization" className="absolute inset-0 w-full h-full object-cover opacity-[0.05] grayscale" />
         </div>
-        <div className="absolute top-0 left-1/2 w-px h-full bg-white/10" />
+        <div className="absolute top-0 left-1/2 w-px h-full bg-black/10" />
       </div>
 
       {/* Content */}
@@ -39,12 +39,12 @@ export default function HeroSection({ scoreImage, waveImage }) {
           transition={{ duration: 1, ease: 'easeOut' }}
         >
           {/* Index tag */}
-          <p className="font-mono text-[10px] tracking-[0.3em] text-white/25 mb-8">
+          <p className="font-mono text-[10px] tracking-[0.3em] text-foreground/25 mb-8">
             000 // INTERFACE
           </p>
 
           {/* Name */}
-          <h1 className="font-display font-bold text-white leading-[0.9] tracking-tight mb-8" style={{ fontSize: 'clamp(2.5rem, 8vw, 8rem)' }}>
+          <h1 className="font-display font-bold text-foreground leading-[0.9] tracking-tight mb-8" style={{ fontSize: 'clamp(2.5rem, 8vw, 8rem)' }}>
             DIEGO<br />JIMÉNEZ<br />TAMAME
           </h1>
 
@@ -54,8 +54,8 @@ export default function HeroSection({ scoreImage, waveImage }) {
               onClick={() => scrollTo('composer')}
               className="group flex items-center gap-3 text-left"
             >
-              <span className="w-2 h-2 bg-white/40 group-hover:bg-white transition-colors" />
-              <span className="font-mono text-sm tracking-[0.2em] text-white/50 group-hover:text-white transition-colors">
+              <span className="w-2 h-2 bg-foreground/40 group-hover:bg-foreground transition-colors" />
+              <span className="font-mono text-sm tracking-[0.2em] text-foreground/50 group-hover:text-foreground transition-colors">
                 {t.hero.subtitle_composer}
               </span>
             </button>
@@ -63,15 +63,15 @@ export default function HeroSection({ scoreImage, waveImage }) {
               onClick={() => scrollTo('engraving')}
               className="group flex items-center gap-3 text-left"
             >
-              <span className="w-2 h-2 bg-white/40 group-hover:bg-white transition-colors" />
-              <span className="font-mono text-sm tracking-[0.2em] text-white/50 group-hover:text-white transition-colors">
+              <span className="w-2 h-2 bg-foreground/40 group-hover:bg-foreground transition-colors" />
+              <span className="font-mono text-sm tracking-[0.2em] text-foreground/50 group-hover:text-foreground transition-colors">
                 {t.hero.subtitle_engraver}
               </span>
             </button>
           </div>
 
           {/* Tagline */}
-          <p className="font-mono text-[13px] leading-relaxed text-white/35 max-w-xl">
+          <p className="font-mono text-[13px] leading-relaxed text-foreground/35 max-w-xl">
             {t.hero.tagline}
           </p>
         </motion.div>
@@ -83,7 +83,7 @@ export default function HeroSection({ scoreImage, waveImage }) {
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-px h-12 bg-gradient-to-b from-white/30 to-transparent" />
+        <div className="w-px h-12 bg-gradient-to-b from-foreground/30 to-transparent" />
       </motion.div>
     </section>
   );
