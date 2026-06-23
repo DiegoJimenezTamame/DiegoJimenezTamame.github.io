@@ -18,11 +18,11 @@ const IMAGES = {
 export default function Home() {
   return (
     <LangProvider>
-      <div className="bg-black min-h-screen">
+      <div className="bg-background min-h-screen">
         <Navigation />
         <HeroSection scoreImage={IMAGES.score} waveImage={IMAGES.wave} />
-        <EngravingSection engravingImage={IMAGES.engraving} />
         <ComposerSection />
+        <EngravingSection engravingImage={IMAGES.engraving} />
         <AboutSection composerImage={IMAGES.composer} />
         <ContactSection />
         <FooterSection />
