@@ -50,7 +50,7 @@ const works = [
     type: 'video'
   },
   {
-    title: '…and they\'ve got us in their cage, ruined of grace and senses…',
+    title: "…and they've got us in their cage, ruined of grace and senses…",
     year: '2016/17',
     instrumentation: 'Bass Clarinet & Violoncello',
     detail: 'After a text by C. Bukowski. Written for Ensemble BCN 216.',
@@ -98,21 +98,19 @@ export default function ComposerSection() {
   const [expandedWork, setExpandedWork] = useState(null);
 
   return (
-    <section id="composer" className="relative py-24 sm:py-32 bg-black border-t border-white/[0.06]">
+    <section id="composer" className="relative py-24 sm:py-32 bg-background border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-        {/* Section header */}
-        <p className="font-mono text-[10px] tracking-[0.3em] text-white/25 mb-6">
+        <p className="font-mono text-[10px] tracking-[0.3em] text-foreground/25 mb-6">
           {t.composer.section}
         </p>
 
-        <h2 className="font-display font-bold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-6">
+        <h2 className="font-display font-bold text-foreground text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-6">
           {t.composer.title}
         </h2>
-        <p className="font-mono text-[13px] leading-relaxed text-white/40 max-w-2xl mb-16">
+        <p className="font-mono text-[13px] leading-relaxed text-foreground/40 max-w-2xl mb-16">
           {t.composer.desc}
         </p>
 
-        {/* Works list */}
         <div className="space-y-0">
           {works.map((work, i) => (
             <motion.div
@@ -121,24 +119,23 @@ export default function ComposerSection() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.03 }}
-              className="border-t border-white/[0.06] group"
+              className="border-t border-border group"
             >
               <button
                 onClick={() => setExpandedWork(expandedWork === i ? null : i)}
                 className="w-full text-left py-5 sm:py-6 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6"
               >
-                <span className="font-mono text-[10px] text-white/15 shrink-0 w-16">
+                <span className="font-mono text-[10px] text-foreground/30 shrink-0 w-16">
                   {work.year}
                 </span>
-                <span className="font-display text-base sm:text-lg text-white/70 group-hover:text-white transition-colors flex-1">
+                <span className="font-display text-base sm:text-lg text-foreground/70 group-hover:text-foreground transition-colors flex-1">
                   {work.title}
                 </span>
-                <span className="font-mono text-[10px] tracking-wider text-white/20 uppercase shrink-0">
+                <span className="font-mono text-[10px] tracking-wider text-foreground/30 uppercase shrink-0">
                   {work.type === 'video' ? t.composer.watch : t.composer.listen}
                 </span>
               </button>
 
-              {/* Expanded content */}
               {expandedWork === i && (
                 <motion.div
                   initial={{ height: 0, opacity: 0 }}
@@ -150,23 +147,23 @@ export default function ComposerSection() {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div className="space-y-4">
                       <div>
-                        <p className="font-mono text-[10px] tracking-wider text-white/25 uppercase mb-1">Instrumentation</p>
-                        <p className="font-mono text-[12px] text-white/50 leading-relaxed">{work.instrumentation}</p>
+                        <p className="font-mono text-[10px] tracking-wider text-foreground/30 uppercase mb-1">Instrumentation</p>
+                        <p className="font-mono text-[12px] text-foreground/50 leading-relaxed">{work.instrumentation}</p>
                       </div>
                       <div>
-                        <p className="font-mono text-[10px] tracking-wider text-white/25 uppercase mb-1">Details</p>
-                        <p className="font-mono text-[12px] text-white/50 leading-relaxed">{work.detail}</p>
+                        <p className="font-mono text-[10px] tracking-wider text-foreground/30 uppercase mb-1">Details</p>
+                        <p className="font-mono text-[12px] text-foreground/50 leading-relaxed">{work.detail}</p>
                       </div>
                       <div>
-                        <p className="font-mono text-[10px] tracking-wider text-white/25 uppercase mb-1">Premiere</p>
-                        <p className="font-mono text-[12px] text-white/50">{work.premiere}</p>
+                        <p className="font-mono text-[10px] tracking-wider text-foreground/30 uppercase mb-1">Premiere</p>
+                        <p className="font-mono text-[12px] text-foreground/50">{work.premiere}</p>
                       </div>
                       {work.videoId && (
                         <a
                           href={`https://www.youtube.com/watch?v=${work.videoId}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-white/60 hover:text-white transition-colors mt-2"
+                          className="inline-flex items-center gap-2 font-mono text-[11px] tracking-wider text-foreground/60 hover:text-foreground transition-colors mt-2"
                         >
                           <Play size={12} />
                           {work.type === 'video' ? 'WATCH ON YOUTUBE' : 'LISTEN'} <ExternalLink size={10} />
@@ -175,7 +172,7 @@ export default function ComposerSection() {
                     </div>
 
                     {work.videoId && (
-                      <div className="aspect-video bg-black border border-white/[0.06] overflow-hidden">
+                      <div className="aspect-video bg-muted border border-border overflow-hidden">
                         <iframe
                           src={`https://www.youtube.com/embed/${work.videoId}`}
                           title={work.title}
@@ -190,7 +187,7 @@ export default function ComposerSection() {
               )}
             </motion.div>
           ))}
-          <div className="border-t border-white/[0.06]" />
+          <div className="border-t border-border" />
         </div>
       </div>
     </section>
