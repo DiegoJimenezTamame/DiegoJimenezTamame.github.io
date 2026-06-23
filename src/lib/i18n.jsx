@@ -5,9 +5,9 @@ const translations = {
     nav: { composer: 'Composer', engraver: 'Engraver', about: 'About', contact: 'Contact' },
     hero: {
       title: 'DIEGO JIMÉNEZ TAMAME',
-      subtitle_composer: 'COMPOSER',
+      subtitle_composer: 'COMPOSER // SOUND ARTIST',
       subtitle_engraver: 'ENGRAVER // ARRANGER',
-      tagline: 'Contemporary music composition, professional music engraving and arranging services — based in Graz, Austria.'
+      tagline: 'Original concert music, professional music engraving and arranging services — based in Graz, Austria.'
     },
     engraving: {
       section: 'SECTION_02 // ENGRAVER & ARRANGER',
@@ -75,9 +75,9 @@ Alongside his compositional work, Diego works professionally as a music engraver
     nav: { composer: 'Compositor', engraver: 'Grabador', about: 'Sobre mí', contact: 'Contacto' },
     hero: {
       title: 'DIEGO JIMÉNEZ TAMAME',
-      subtitle_composer: 'COMPOSITOR',
+      subtitle_composer: 'COMPOSITOR // ARTISTA SONORO',
       subtitle_engraver: 'GRABADOR // ARREGLISTA',
-      tagline: 'Composición de música contemporánea, servicios profesionales de grabado musical y arreglos — con base en Graz, Austria.'
+      tagline: 'Música de concierto original, servicios profesionales de grabado musical y arreglos — con base en Graz, Austria.'
     },
     engraving: {
       section: 'SECCIÓN_02 // GRABADOR Y ARREGLISTA',
@@ -145,9 +145,9 @@ Paralelamente a su trabajo compositivo, Diego trabaja profesionalmente como grab
     nav: { composer: 'Komponist', engraver: 'Notensetzer', about: 'Über mich', contact: 'Kontakt' },
     hero: {
       title: 'DIEGO JIMÉNEZ TAMAME',
-      subtitle_composer: 'KOMPONIST',
+      subtitle_composer: 'KOMPONIST // KLANGKÜNSTLER',
       subtitle_engraver: 'NOTENSETZER // ARRANGEUR',
-      tagline: 'Zeitgenössische Musikkomposition, professioneller Notensatz und Arrangement-Services — ansässig in Graz, Österreich.'
+      tagline: 'Originale Konzertmusik, professioneller Notensatz und Arrangement-Services — ansässig in Graz, Österreich.'
     },
     engraving: {
       section: 'SEKTION_02 // NOTENSETZER & ARRANGEUR',
@@ -181,7 +181,7 @@ Paralelamente a su trabajo compositivo, Diego trabaja profesionalmente como grab
 
 Er studierte Komposition an der Kunstuniversität Graz bei Beat Furrer und Clemens Gadenstätter und nahm an Programmen des IRCAM (ManiFeste Academy, Paris), der Fondation Royaumont (Voix Nouvelles) und der impuls Academy Graz teil.
 
-Seine Musik wurde von Ensembles wie Ensemble Linea, Schallfeld Ensemble, Pulso Ensemble und dem Orchestre Philharmonique de Radio France unter der Leitung von Peter Rundel aufgeführt. Sein Werk wurde auf Radio France („Création Mondiale" mit Anne Montaron) und ORF gesendet.
+Seine Musik wurde von Ensembles wie Ensemble Linea, Schallfeld Ensemble, Pulso Ensemble und dem Orchestre Philharmonique de Radio France unter der Leitung von Peter Rundel aufgeführt. Sein Werk wurde auf Radio France ("Création Mondiale" mit Anne Montaron) und ORF gesendet.
 
 Er erhielt Aufträge und Förderungen von Schallfeld Ensemble, IRCAM, Fondation Royaumont, impuls, SKE Fonds und der Stadt Graz.
 
